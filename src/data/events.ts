@@ -16,4 +16,23 @@ export const events = [
         choiceThreeText: null,
         choiceThreeOutcome: null,
     },
+    {
+        id: 2,
+        eventTitle: 'How do you go about your first semester of college?',
+        choiceOneText:
+            'Show up to all of your classes on time, only missing when necessary.',
+        choiceOneOutcome: () => {
+            const { updateGpa } = useGameStore.getState();
+            updateGpa(4);
+        },
+        choiceTwoText:
+            'College should be fun, I can skip some classes to meet people!',
+        choiceTwoOutcome: () => {
+            const { updateGpa, updateNetwork } = useGameStore.getState();
+            updateGpa(3);
+            updateNetwork(5);
+        },
+        choiceThreeText: null,
+        choiceThreeOutcome: null,
+    },
 ];
