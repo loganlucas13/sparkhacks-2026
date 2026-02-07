@@ -14,7 +14,7 @@ const Results = () => {
         useGameStore();
 
     const calculateAcademiaScore = ({ gpa, techSkills, network }) => {
-        return gpa * 10 + techSkills * 0.6 + network * 0.3;
+        return gpa * 10 + techSkills * 0.8 + network * 0.5;
     };
 
     const calculateIndustryScore = ({ gpa, techSkills, network }) => {
@@ -28,21 +28,21 @@ const Results = () => {
     const resolveAcademiaOutcome = (stats) => {
         const score = calculateAcademiaScore(stats);
 
-        if (score >= 90) {
+        if (score >= 75) {
             return {
                 title: 'Legendary Academic',
                 text: `Your excellent tech skills and GPA have served you well as you apply to graduate programs. You went on to earn a PhD in computer science and your work is cited by many. Your genius knows no bounds and you have become famous for your research, including solving the P vs. NP problem. For having solved a millennium prize problem, you earn $1 million and your name appears on textbooks for years to come.`,
             };
         }
 
-        if (score >= 70) {
+        if (score >= 60) {
             return {
                 title: 'Respected Researcher',
                 text: `Your strong academic record earns you admission into a solid graduate research program. You complete your PhD and contribute meaningful work to your field, publishing papers that influence future research. You go on to become a respected professor and researcher, mentoring the next generation of computer scientists.`,
             };
         }
 
-        if (score >= 50) {
+        if (score >= 40) {
             return {
                 title: 'Academic Contributor',
                 text: `You complete graduate school and contribute to research as part of a larger team.
@@ -59,7 +59,7 @@ const Results = () => {
     const resolveIndustryOutcome = (stats) => {
         const score = calculateIndustryScore(stats);
 
-        if (score >= 95) {
+        if (score >= 85) {
             return {
                 title: 'Elite Software Engineer',
                 text: `Your technical ability and strong network land you multiple offers from top tech companies. You accept a role at a leading firm, working on products used by millions. Your career accelerates quickly, and you rise to senior and leadership positions earlier than most.`,
@@ -100,7 +100,7 @@ const Results = () => {
             };
         }
 
-        if (score >= 90) {
+        if (score >= 85) {
             return {
                 title: 'Tech Billionaire',
                 text: `Your startup rapidly takes off, being used by millions of people globally. Your company becomes the hottest buy on the market, and every investor wants a piece. The stock price skyrockets, and you become a tech billionaire while leaving a lasting mark on the tech world.`,
