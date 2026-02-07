@@ -31,9 +31,9 @@ const initialState = {
 export const useGameStore = create<GameStore>((set) => ({
     ...initialState,
     updateTechSkills: (value) =>
-        set((state) => ({ techSkills: state.techSkills + value })),
+        set((state) => ({ techSkills: Math.max(0, state.techSkills + value) })),
     updateNetwork: (value) =>
-        set((state) => ({ network: state.network + value })),
+        set((state) => ({ network: Math.max(0, state.network + value) })),
     updateGpa: (value) =>
         set((state) => ({
             gpa: Math.min(state.gpaHasDropped ? 3.9 : 4, state.gpa + value),
