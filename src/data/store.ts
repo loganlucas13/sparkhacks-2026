@@ -8,7 +8,6 @@ interface GameStore {
     branch: number;
     careerPath: string;
     gpaHasDropped: boolean;
-
     updateTechSkills: (value: number) => void;
     updateNetwork: (value: number) => void;
     updateGpa: (value: number) => void;
@@ -16,9 +15,10 @@ interface GameStore {
     updateBranch: (value: number) => void;
     updateCareerPath: (value: string) => void;
     updateGpaHasDropped: (value: boolean) => void;
+    reset: () => void;
 }
 
-export const useGameStore = create<GameStore>((set) => ({
+const initialState = {
     techSkills: 0,
     network: 0,
     gpa: 0,
@@ -26,6 +26,10 @@ export const useGameStore = create<GameStore>((set) => ({
     branch: 0,
     careerPath: '',
     gpaHasDropped: false,
+};
+
+export const useGameStore = create<GameStore>((set) => ({
+    ...initialState,
     updateTechSkills: (value) =>
         set((state) => ({ techSkills: state.techSkills + value })),
     updateNetwork: (value) =>
@@ -38,4 +42,5 @@ export const useGameStore = create<GameStore>((set) => ({
     updateBranch: (value) => set({ branch: value }),
     updateCareerPath: (value) => set({ careerPath: value }),
     updateGpaHasDropped: (value) => set({ gpaHasDropped: value }),
+    reset: () => set(initialState),
 }));
