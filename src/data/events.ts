@@ -99,21 +99,51 @@ export const events = [
         choiceOneText:
             ' I will continue focusing on my academics and excelling in my coursework.',
         choiceOneOutcome: () => {
-            const { updateGpa,updateTechSkills } = useGameStore.getState();
+            const { updateGpa,updateTechSkills,updateBranch } = useGameStore.getState();
             updateGpa(0.2);
             updateTechSkills(3)
+            updateBranch(1)
         },
         choiceTwoText:
             ' I will focus on gaining technical skills outside of class through personal projects',
         choiceTwoOutcome: () => {
-            const { updateTechSkills,updateNetwork } = useGameStore.getState();
+            const { updateTechSkills,updateNetwork,updateBranch } = useGameStore.getState();
             updateTechSkills(6)
             updateNetwork(5)
+            updateBranch(2)
         },
         choiceThreeText: 'I will focus on extracurricular activities through clubs',
         choiceThreeOutcome: () => {
-            const { updateNetwork } = useGameStore.getState();
+            const { updateNetwork,updateBranch } = useGameStore.getState();
             updateNetwork(5)
+            updateBranch(3)
+        },
+    },
+    {
+        id: 7,
+        eventTitle: 'It is now your sophomore year. You are getting used to college, and you can now start to branch into different actions on top of your coursework. What do you focus on this year?',
+        choiceOneText:
+            ' I will continue focusing on my academics and excelling in my coursework.',
+        choiceOneOutcome: () => {
+            const { updateGpa,updateTechSkills,updateBranch } = useGameStore.getState();
+            updateGpa(0.2);
+            updateTechSkills(3)
+            updateBranch(1)
+        },
+        choiceTwoText:
+            ' I will focus on gaining technical skills outside of class through personal projects',
+        choiceTwoOutcome: () => {
+            const { updateTechSkills,updateNetwork,updateBranch } = useGameStore.getState();
+            updateTechSkills(6)
+            updateNetwork(5)
+            updateBranch(2)
+        },
+        choiceThreeText: 'I will focus on extracurricular activities through clubs',
+        choiceThreeOutcome: () => {
+            const { updateNetwork,updateBranch, branch } = useGameStore.getState();
+            updateNetwork(5)
+            updateBranch(3)
+            console.log(branch);
         },
     },
 ];
