@@ -60,16 +60,16 @@ const Event = ({
 }: EventProps) => {
     return (
         <>
-            <div className="w-screen flex flex-col gap-20">
+            <div className="w-screen flex flex-col gap-10">
                 {/* event text*/}
                 <div className="relative flex justify-center pt-10">
                     <img
                         src={Banner}
-                        className="pixelated w-2/5 h-auto"
+                        className="pixelated w-1/2 h-auto"
                         alt=""
                     />
-                    <span className="absolute inset-0 flex items-center justify-center text-black text-4xl text-center pointer-events-none px-8">
-                        <span className="max-w-[35%] text-center translate-y-4">
+                    <span className="absolute inset-0 flex items-center justify-center text-black text-3xl text-center pointer-events-none px-8">
+                        <span className="max-w-[40%] text-center translate-y-4">
                             {eventText}
                         </span>
                     </span>

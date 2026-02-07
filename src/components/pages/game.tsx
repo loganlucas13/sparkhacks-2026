@@ -27,7 +27,7 @@ const GamePage = () => {
 
     return (
         <>
-            <div className="h-screen flex flex-col items-center gap-16">
+            <div className="h-screen flex flex-col items-center gap-10">
                 <Event
                     eventText={currentEvent.eventTitle}
                     choiceOneText={currentEvent.choiceOneText}
