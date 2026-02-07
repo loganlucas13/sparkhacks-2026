@@ -539,6 +539,8 @@ export const events = [
         choiceOneOutcome: () => {
             const { updateCareerPath } = useGameStore.getState();
             updateCareerPath('academia');
+
+            
         },
         choiceTwoText: 'Commit to industry through a job in tech',
         choiceTwoOutcome: () => {

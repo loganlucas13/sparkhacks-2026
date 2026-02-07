@@ -7,12 +7,15 @@ import MotherboardPicture from '../../assets/motherboard.png';
 import NetworkPicture from '../../assets/network.png';
 import GraduationPicture from '../../assets/graduation-cap.png';
 import WalletPicture from '../../assets/wallet.png';
+import { useNavigate } from 'react-router-dom';
 
 const GamePage = () => {
     const [currentEventIndex, setCurrentEventIndex] = useState(0);
     const { techSkills, network, gpa, money } = useGameStore();
 
     const currentEvent = events[currentEventIndex];
+
+    const navigate = useNavigate();
 
     const handleChoice = (outcomeFunction: () => void) => {
         outcomeFunction();
@@ -21,6 +24,7 @@ const GamePage = () => {
             setCurrentEventIndex(currentEventIndex + 1);
         } else {
             // all events shown, display end of game?
+            navigate('/results');
             console.log('game finished');
         }
     };
