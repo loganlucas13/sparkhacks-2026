@@ -1,3 +1,3 @@
-# SparkHacks 2026
+# UIC Journey
 
 coming soon...

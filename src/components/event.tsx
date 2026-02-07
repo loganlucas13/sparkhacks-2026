@@ -1,10 +1,11 @@
+import getText from '../data/getText';
 import Banner from '../assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Bar01a.png';
 import ButtonBackground from '../assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot03a.png';
 import InnerButtonBackground from '../assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button01a_2.png';
 import HoverAnimationPicture from '../assets/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Select01a_1.png';
 
 interface ChoiceProps {
-    choiceText: string;
+    choiceText: string | (() => string);
     choiceOutcome: (() => void) | null;
 }
 
@@ -31,7 +32,7 @@ const Choice = ({ choiceText, choiceOutcome }: ChoiceProps) => {
                         alt=""
                     />
                     <span className="absolute inset-0 flex items-center justify-center text-black text-3xl px-4 text-center">
-                        {choiceText}
+                        {getText(choiceText)}
                     </span>
                 </div>
             </div>
@@ -40,12 +41,12 @@ const Choice = ({ choiceText, choiceOutcome }: ChoiceProps) => {
 };
 
 interface EventProps {
-    eventText: string;
-    choiceOneText: string;
+    eventText: string | (() => string);
+    choiceOneText: string | (() => string);
     choiceOneOutcome: () => void;
-    choiceTwoText: string;
+    choiceTwoText: string | (() => string);
     choiceTwoOutcome: () => void;
-    choiceThreeText: string | null;
+    choiceThreeText: string | (() => string) | null;
     choiceThreeOutcome: (() => void) | null;
 }
 
@@ -70,7 +71,7 @@ const Event = ({
                     />
                     <span className="absolute inset-0 flex items-center justify-center text-black text-3xl text-center pointer-events-none px-8">
                         <span className="max-w-[40%] text-center translate-y-4">
-                            {eventText}
+                            {getText(eventText)}
                         </span>
                     </span>
                 </div>
@@ -78,16 +79,16 @@ const Event = ({
                 {/* choices */}
                 <div className="flex flex-row items-center justify-center gap-20 w-full">
                     <Choice
-                        choiceText={choiceOneText}
+                        choiceText={getText(choiceOneText)}
                         choiceOutcome={choiceOneOutcome}
                     />
                     <Choice
-                        choiceText={choiceTwoText}
+                        choiceText={getText(choiceTwoText)}
                         choiceOutcome={choiceTwoOutcome}
                     />
                     {choiceThreeText && (
                         <Choice
-                            choiceText={choiceThreeText}
+                            choiceText={getText(choiceThreeText)}
                             choiceOutcome={choiceThreeOutcome}
                         />
                     )}
