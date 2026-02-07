@@ -28,7 +28,7 @@ const Results = () => {
     const resolveAcademiaOutcome = (stats) => {
         const score = calculateAcademiaScore(stats);
 
-        if (score >= 75) {
+        if (score >= 80) {
             return {
                 title: 'Legendary Academic',
                 text: `Your excellent tech skills and GPA have served you well as you apply to graduate programs. You went on to earn a PhD in computer science and your work is cited by many. Your genius knows no bounds and you have become famous for your research, including solving the P vs. NP problem. For having solved a millennium prize problem, you earn $1 million and your name appears on textbooks for years to come.`,
