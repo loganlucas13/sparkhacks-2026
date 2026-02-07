@@ -110,14 +110,14 @@ const Results = () => {
         if (score >= 70) {
             return {
                 title: 'Successful Founder',
-                text: `Your startup doesn’t become the next unicorn, but it succeeds enough to sustain itself. You gain invaluable experience as a founder, and your journey opens doors to future ventures or high-level roles in tech.`,
+                text: `Your startup doesn't become the next unicorn, but it succeeds enough to sustain itself. You gain invaluable experience as a founder, and your journey opens doors to future ventures or high-level roles in tech.`,
             };
         }
 
         return {
             title: 'Small Exit',
             text: `Your startup survives and is quietly acquired.
-    Not a blockbuster—but a win.`,
+            Not a blockbuster, but a win.`,
         };
     };
 
