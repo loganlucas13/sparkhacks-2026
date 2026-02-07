@@ -24,7 +24,8 @@ export const useGameStore = create<GameStore>((set) => ({
         set((state) => ({ techSkills: state.techSkills + value })),
     updateNetwork: (value) =>
         set((state) => ({ network: state.network + value })),
-    updateGpa: (value) => set((state) => ({ gpa: state.gpa + value })),
+    updateGpa: (value) =>
+        set((state) => ({ gpa: Math.min(4, state.gpa + value) })),
     updateMoney: (value) => set((state) => ({ money: state.money + value })),
     updateBranch: (value) => set({ branch: value }),
 }));
