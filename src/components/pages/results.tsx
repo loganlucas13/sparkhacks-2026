@@ -10,7 +10,7 @@ const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 const Results = () => {
     const navigate = useNavigate();
 
-    const { techSkills, network, gpa, money, careerPath, updateMoney, reset } =
+    const { techSkills, network, gpa, money, careerPath, reset } =
         useGameStore();
 
     const calculateAcademiaScore = ({ gpa, techSkills, network }) => {
@@ -101,8 +101,6 @@ const Results = () => {
         }
 
         if (score >= 90) {
-            updateMoney(10000000000);
-
             return {
                 title: 'Tech Billionaire',
                 text: `Your startup rapidly takes off, being used by millions of people globally. Your company becomes the hottest buy on the market, and every investor wants a piece. The stock price skyrockets, and you become a tech billionaire while leaving a lasting mark on the tech world.`,
@@ -165,7 +163,7 @@ const Results = () => {
 
                         <div className="px-4 py-2 text-sm">
                             Final Stats — Tech: {techSkills} | Network:{' '}
-                            {network} | GPA: {gpa.toFixed(2)} | Money: ${money}
+                            {network} | GPA: {gpa.toFixed(2)}
                         </div>
                     </div>
                 </span>
