@@ -1,14 +1,18 @@
-# UIC Journey
+# Your UIC Journey
 
 ## About
 
-Our game follows the journey of a UIC computer science student through their 4-year undergraduate study. Players are presented with different scenarios and checkpoints throughout the game, where they can make different choices to affect different skills. At the end of the game, users choose what they want to do upon graduation, and their skills gained over their time at UIC determines their success within their choice.
+Your UIC Journey follows the journey of a UIC computer science student through their 4-year undergraduate study. Players are presented with different scenarios and checkpoints throughout the game, where they can make different choices to affect different skills. At the end of the game, users choose what they want to do upon graduation, and their skills gained over their time at UIC determines their success within their choice.
 
 ## Setup
 
 1. From the root directory, run the command `npm i` in the terminal to install all dependencies.
 2. From the root directory, run the command `npm run dev` in the terminal to start running the project.
 3. Go to the link displayed in the terminal in the browser.
+
+## Code Overview
+
+Your UIC Journey uses React + TypeScript. To be able to access data throughout the entire application, we created a global store using [Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) (located within `src/data/store.ts`). We also used [React Router](https://reactrouter.com/) to switch between various pages. At the end of the game, we use the previous choices made, along with their effects on the user's statistics, to evaluate and provide an outcome similar to real life.
 
 ## Preview
 
