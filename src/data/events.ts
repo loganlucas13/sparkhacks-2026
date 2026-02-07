@@ -28,8 +28,10 @@ export const events = [
         choiceTwoText:
             'College should be fun, I can skip some classes to meet people!',
         choiceTwoOutcome: () => {
-            const { updateGpa, updateNetwork } = useGameStore.getState();
+            const { updateGpa, updateNetwork, updateGpaHasDropped } =
+                useGameStore.getState();
             updateGpa(3);
+            updateGpaHasDropped(true);
             updateNetwork(5);
         },
         choiceThreeText: null,
@@ -67,9 +69,11 @@ export const events = [
         choiceTwoText:
             'Skip studying and focus on social events and learning skills outside of class',
         choiceTwoOutcome: () => {
-            const { updateTechSkills, updateGpa } = useGameStore.getState();
+            const { updateTechSkills, updateGpa, updateGpaHasDropped } =
+                useGameStore.getState();
             updateTechSkills(3);
             updateGpa(-0.2);
+            updateGpaHasDropped(true);
         },
         choiceThreeText: null,
         choiceThreeOutcome: null,
@@ -95,7 +99,7 @@ export const events = [
     {
         id: 6,
         eventTitle:
-            'It is now your sophomore year. You are getting used to college, and you can now start to branch into different actions on top of your coursework. What do you focus on this year?',
+            'It is now your sophomore year. You can now start to branch into different actions on top of your coursework. What do you focus on this year?',
         choiceOneText:
             'I will continue focusing on my academics and excelling in my coursework.',
         choiceOneOutcome: () => {
@@ -128,7 +132,7 @@ export const events = [
             const { branch } = useGameStore.getState();
 
             if (branch === 1) {
-                return 'You are an excellent student and have gained the recognition of your professors. After the semester, a professor reaches out to you to offer you a position as a TA for the next semester. What do you do?';
+                return 'After the semester, a professor reaches out to you to offer you a position as a TA for the next semester. What do you do?';
             } else if (branch === 2) {
                 return 'You have gained many new skills and have become more comfortable with working on complex projects. How do you use your new skills?';
             } else {
@@ -203,7 +207,7 @@ export const events = [
             if (branch === 1) {
                 return 'It is now the end of the sophomore year. Another one of your professors offers you a spot as a research assistant in their lab for the summer. What do you do?';
             } else if (branch === 2) {
-                return 'It is the end of sophomore year and your technical work has gained the attention of a local company. After reaching out and interviewing you, they extend you an offer for a summer internship. Do you accept?';
+                return 'It is the end of sophomore year and you have gained the attention of a local company. After interviewing you, they extend you an offer for a summer internship. Do you accept?';
             } else {
                 return 'At the end of the year, one of the connections you made during the last two semesters offers you a chance to work on a startup idea over the summer. What do you do?';
             }
@@ -433,7 +437,7 @@ export const events = [
     {
         id: 12,
         eventTitle:
-            'It is now your final year as a CS student at UIC. Graduation is just around the corner! At this point, your skills have been specialized and well developed over the years, and you spend the last year preparing for what you will do after graduation.',
+            'It is now your final year as a CS student at UIC. At this point, your skills have been specialized and well developed over the years, what will you do to prepare for graduation?',
         choiceOneText:
             'Invest your time heavily in research and advanced CS courses',
         choiceOneOutcome: () => {
